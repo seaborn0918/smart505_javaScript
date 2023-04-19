@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 2일차 1번 파일</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/bootstrap.bundle.js"></script>
+
+  <script>
+    // 배열 : 하나의 변수명으로 여러 개의 데이터를 저장할 수 있는 데이터 타입
+    // 배열은 index가 존재하며 0부터 시작
+    // 데이터는 해당 index 번호를 통해서 저장하거나 가져오기를 할 수 있음
+    // 배열의 최대 크기를 넘어가는 index 접근 시 오류 발생
+    // 자바스크립트의 배열은 크기가 유동적임
+    // [] 기호를 사용하여 배열임을 확인할 수 있음
+    // length 명령어로 배열의 크기를 알 수 있음
+
+    // 사용법 (선언) 1, 2번 권장
+    // 1. let 배열명 = [];
+    // 배열명[index] = 데이터;
+    // 2. let 배열명 = [데이터1, 데이터2, 데이터3, ... ];
+    // 3. let 배열명 = new Array();
+    // 4. let 배열명 = new Array(데이터1, 데이터2, 데이터3, ... );
+
+    // 사용법 : 저장, 가져오기
+    // 배열명[index] = 데이터; // 저장
+    // 배열명[index]; // 가져오기
+    // console.log(배열명[index]);
+
+    // 배열 선언
+    let numArr1 = [];
+    let numArr2 = [10, 20, 30, 40, 50];
+    let numArr3 = new Array();
+    let numArr4 = new Array(10, 20, 30, 40, 50);
+
+    console.log(numArr1);
+    console.log(numArr2);
+    console.log(numArr3);
+    console.log(numArr4);
+
+    // 배열 저장
+    numArr1[0] = 100;
+    numArr1[1] = 200;
+    numArr1[2] = 300;
+    numArr1[3] = 400;
+    numArr1[4] = 500;
+
+    console.log(numArr1[0]);
+    console.log(numArr1[1]);
+    console.log(numArr1[2]);
+    console.log(numArr1[3]);
+    console.log(numArr1[4]);
+
+    console.log(numArr2[0]);
+    console.log(numArr2[1]);
+    console.log(numArr2[2]);
+    console.log(numArr2[3]);
+    console.log(numArr2[4]);
+
+    console.log("배열 numArr1의 크기 : " + numArr1.length);
+    console.log("배열 numArr2의 크기 : " + numArr2.length);
+
+    // 배열 가져오기
+    console.log(numArr1[10]);
+
+    // 빈 배열 선언 시 반드시 []를 대입하여 빈 배열임을 알려줘야 함
+    // 자바스크립트는 간소화된 언어이기 때문에 변수에 데이터 타입을 설정하지 않음
+    // 하나의 변수에 여러 가지 데이터 타입을 저장할 수 있음
+    // 변수만 선언하고 나중에 배열의 데이터를 저장 시 해당 변수는 배열이 아닌 일반 변수임
+    // 일반 변수는 배열이 가지고 있는 함수들을 사용할 수 없으며 index도 없음
+    let numArr5; // 빈 변수
+    let numArr6 = []; // 빈 배열
+    console.log("numArr5의 데이터 타입 : " + typeof numArr5);
+    console.log("numArr6의 데이터 타입 : " + typeof numArr6);
+
+    numArr5 = [10, 20, 30]; // 빈 변수에 배열 데이터를 저장
+    numArr6 = [10, 20, 30]; // 빈 배열에 배열 데이터를 저장
+    console.log("numArr5의 데이터 타입 : " + typeof numArr5);
+    console.log("numArr6의 데이터 타입 : " + typeof numArr6);
+    console.log(numArr5);
+    console.log(numArr6);
+
+    let numArr7;
+    let numArr8 = [];
+    console.log("numArr7의 데이터 타입 : " + typeof numArr7);
+    console.log("numArr8의 데이터 타입 : " + typeof numArr8);
+
+    // numArr7[0] = 100; // 일반 변수를 배열처럼 사용하고자 하기 때문에 오류가 발생
+    numArr8[0] = 100; // 배열로 선언된 변수이기 때문에 index를 사용하는 것이 가능
+    console.log("numArr7의 데이터 타입 : " + typeof numArr7);
+    console.log("numArr8의 데이터 타입 : " + typeof numArr8);
+
+    let numArr9 = []; // 빈 배열 선언
+    let numArr10 = [10, 20, 30]; // 숫자 타입 데이터 배열
+    let numArr11 = ["데이터1", "데이터2", "데이터3"]; // 문자열 타입 데이터 배열
+    let numArr12 = [true, false]; // 논리 타입 데이터 배열
+    let numArr13 = [10, 20, "삼십", "사십", true, false]; // 여러가지 데이터 타입을 요소로 가지는 배열
+    let numArr14 = [10, 20, [30, 40, 60]]; // 배열의 요소로 배열을 가지는 배열. 다차원 배열
+
+    console.log(numArr9);
+    console.log(numArr10);
+    console.log(numArr11);
+    console.log(numArr12);
+    console.log(numArr13);
+    console.log(numArr14);
+
+    // 다차원 배열 : 배열의 요소로 배열을 가지는 배열
+    // 1차원 배열 : 배열의 요소로 데이터를 가지는 배열. 기본 배열
+    // 2차원 배열 : 배열의 요소로 1차원 배열을 가지는 배열
+    // 3차원 배열 : 배열의 요소로 2차원 배열을 가지는 배열
+
+    // 사용법 (2차원 배열)
+    // 배열명 [라인 index][칸 index];
+
+    // 1차원 배열
+    let arr1 = [10, 20, 30, 40, 50];
+    // 2차원 배열
+    let arr2 = [
+      [10, 20, 30, 40, 50],
+      [60, 70, 80, 90, 100],
+      [110, 120, 130, 140, 150],
+      [160, 170, 180, 190, 200],
+    ];
+    // 3차원 배열
+    let arr3 = [
+      [[10, 20, 30], [40, 50, 60], [70, 80, 90]],
+      [[100, 110, 120], [130, 140, 150], [160, 170, 180]],
+      [[190, 200, 210], [220, 230, 240], [250, 260, 270]],
+    ];
+
+    console.log(arr1);
+    console.log(arr2);
+    console.log(arr3);
+
+    console.log(arr2[1][2]);
+    console.log(arr2[2][3]);
+    arr2[1][2] = 8000;
+    arr2[2][3] = 14000;
+    console.log(arr2[1][2]);
+    console.log(arr2[2][3]);
+
+    console.log("\n------- 배열의 크기 -------\n")
+    console.log("배열 arr1의 크기 : " + arr1.length);
+    console.log("배열 arr2의 크기 : " + arr2.length);
+    console.log("배열 arr2의 0번 index의 크기 : " + arr2[0].length);
+
+    console.log("\n------- 배열 관련 함수 -------\n")
+
+    //toString() : 배열의 요소를 문자열로 모두 출력
+    // 사용법 : 배열명.toString();
+    let fruits = ["바나나", "배", "사과", "포도"];
+    console.log(fruits[0] + "," + fruits[1] + "," + fruits[2] + "," + fruits[3]);
+    console.log(fruits.toString());
+
+    // join("문자열") : 배열의 요소를 문자열로 출력 시 지정한 문자열을 사이사이에 추가하여 출력
+    // 사용법 : 배열명.join("문자열");
+    fruits = ["바나나", "배", "사과", "포도"];
+    console.log(fruits.join("&"));
+
+    console.log("\n------- push/pop -------\n")
+    // push(데이터) : 지정한 배열 끝에 지정한 데이터를 추가함
+    // 사용법 : 배열명.push(데이터);
+    console.log("원본 배열 fruits의 값 : ");
+    console.log(fruits);
+
+    fruits.push("샤인머스킷");
+    fruits.push("딸기");
+    fruits.push("망고");
+    console.log("push 사용 후 배열 fruits : ");
+    console.log(fruits);
+
+    // 차례상 7번 index부터 데이터를 입력해야 하지만 8번부터 데이터를 입력하는 것이 가능함
+    // 중간에 비어있는 데이터 영역이 발생할 수 있음
+    // 따라서 배열의 함수를 사용해서 데이터를 추가, 삭제하는 것이 좋음
+    fruits[8] = "참외";
+    fruits[9] = "복숭아";
+    console.log("데이터 추가 후 배열 사용 후 fruits : ");
+    console.log(fruits);
+
+    // pop() : 지정한 배열의 마지막 데이터를 삭제 및 가져옴
+    // 사용법 : 배열명.pop();
+    // 변수명 = 배열명.pop();
+    console.log("현재 배열 fruits의 값 : ");
+    console.log(fruits);
+
+    fruits.pop()
+    fruits.pop()
+    fruits.pop()
+    fruits.pop()
+    fruits.pop()
+    console.log("pop으로 데이터 삭제 후 fruits : ");
+    console.log(fruits)
+
+    let data = fruits.pop()
+    console.log("pop추가 사용 후 fruits : ");
+    console.log(fruits)
+    console.log("pop으로 가져온 데이터 : " + data);
+
+
+    console.log("\n------- shift/unshift -------\n")
+    // unshift(데이터) : push()와 비슷한 기능을 가진 함수. 지정한 배열의 가장 앞에 지정한 데이터를 추가
+    // 사용법 : 배열명.unshift(데이터);
+    console.log("현재 배열 fruits의 값 : ");
+    console.log(fruits);
+
+    fruits.unshift("망고");
+    fruits.unshift("파인애플");
+    fruits.unshift("코코넛");
+    console.log("unshift로 데이터 추가 후 friuts : ");
+    console.log(fruits);
+
+    // shift() :pop()와 비슷한 기능을 가진 함수. 지정한 배열의 가장 앞에 있는 데이터를 삭제 및 가져옴
+    // 사용법 : 배열명.shift();
+    // 변수명 = 배열명.shift();
+
+    console.log("현재 배열 fruits의 값 : ");
+    console.log(fruits);
+
+    fruits.shift();
+    fruits.shift();
+    console.log("shift 사용 후 fruits의 값 : ");
+    console.log(fruits);
+
+    data = fruits.shift()
+    console.log("shift를 추가 사용 후 fruits의 값 : ");
+    console.log(fruits);
+    console.log("shitf로 가져온 데이터 : " + data);
+
+    console.log("\n------- delete/concat/flat -------\n")
+    // delete : 배열의 지정한 index의 데이터를 삭제. 해당 index는 그대로 존재하면서 데이터만 삭제. 배열의 전체 크기는 그대로 유지. 권장되는 방법이 아님
+    // 사용법 : delete 배열명[index];
+    console.log("원본 배열 fruits의 데이터 : ");
+    console.log(fruits);
+
+    delete fruits[0];
+    console.log("delete 사용 후 배열 fruits의 데이터 : ");
+    console.log(fruits);
+
+    // concat(배열) : 두 개 이상의 배열을 하나의 배열로 합치는 함수. 지정한 배열에 매개변수로 사용된 배열을 추가하여 새로운 배열을 생성
+    // 사용법 : 새 배열명 = 배열1.concat(배열2);
+    // 새 배열명 = 배열1.concat(배열2, 배열3);
+    // 새 배열명 = 배열1.concat(데이터);
+    let tropicalFruits = ["바나나", "파인애플", "망고", "애플망고", "망고스틴"];
+    localFruits = ["사과", "배", "수박", "복숭아", "포도"];
+    console.log("배열 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+    console.log("배열 localFruits의 데이터 : ");
+    console.log(localFruits);
+
+    fruits = localFruits.concat(tropicalFruits);
+    console.log("concat() 사용 후 배열 fruits의 데이터 : ");
+    console.log(fruits);
+    console.log("concat() 사용 후 배열 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+    console.log("concat() 사용 후 배열 localFruits의 데이터 : ");
+    console.log(localFruits);
+
+    fruits = fruits.concat("한라봉");
+    console.log("concat()으로 배열에 데이터를 직접 추가 후 배열 fruits의 데이터 : ");
+    console.log(fruits);
+
+    // flat() : 2차원 이상의 배열을 1차원 배열로 변경하여 출력하는 함수
+    // 사용법 : 새 배열명 = 다차원배열.flat();
+    let numArr = [
+      [10, 20, 30],
+      [40, 50, 60],
+      [70, 80, 90],
+    ];
+    console.log("원본 배열 numArr의 데이터 : ");
+    console.log(numArr);
+
+    let newNumArr = numArr.flat();
+    console.log("flat() 사용 후 numArr의 데이터 : ")
+    console.log(numArr);
+    console.log("flat() 사용으로 새로 생성된 배열 newNumArr의 데이터 : ");
+    console.log(newNumArr);
+
+    console.log("\n------- splicing/slicing -------\n")
+    // splice() : 지정한 배열의 지정한 위치에 데이터를 추가, 수정, 삭제하는 함수. 첫번째 매개변수에 배열의 위치 index번호를 입력. 두번째 매개변수에 제거할 데이터 수. 세번째 매개변수 이후로는 추가할 데이터를 입력. 원본 배열의 데이터를 추가, 수정, 삭제
+    // 사용법 : 배열명.splice(index, count, 데이터1, 데이터2, ...);
+
+    console.log("--- splice()로 데이터 추가하기 ---")
+    console.log("원본 배열 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+
+    tropicalFruits.splice(2, 0, "파파야", "두리안");
+    console.log("splice()로 데이터 추가 후 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+
+    console.log("--- splice()로 데이터 수정하기 ---")
+    console.log("현재 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+
+    tropicalFruits.splice(5, 2, "코코넛", "석류", "대추야자");
+    console.log("splice()로 데이터 수정 후 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+
+    console.log("--- splice()로 데이터 삭제하기 ---")
+    console.log("현재 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+
+    tropicalFruits.splice(4, 4);
+    console.log("splice()로 데이터 삭제 후 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+
+    // slice() : 지정한 배열의 지정한 위치의 데이터를 잘라내는 함수. splice()와 달리 원본은 그대로 둠
+    // 매개변수 1개만 사용 시 지정한 위치에서 마지막 요소까지 잘라냄
+    // 매개변수 2개 사용 시 첫번째 매개변수인 index 위치에서부터 두번째 매개변수인 index까지의 데이터를 잘라냄
+    // 사용법 : 변수명 = 배열명.slice(index);
+    // 변수명 = 배열명.slice(시작 index, 끝 index);
+
+    console.log("현재 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+
+    let selected = tropicalFruits.slice(2);
+    console.log("slice() 사용 후 tropicalFruits의 데이터 : ");
+    console.log(tropicalFruits);
+    console.log("slice() 사용으로 잘라낸 데이터 : ");
+    console.log(selected);
+
+    console.log("원본 localFruits의 데이터 : ");
+    console.log(localFruits);
+
+    selected = localFruits.slice(1, 4);
+    console.log("slice() 사용으로 잘라낸 데이터 : ");
+    console.log(selected);
+
+    console.log("\n------- sort/reverse -------\n")
+    // sort : 배열의 요소를 순서대로 정렬하는 함수. 오름차순으로 정렬. 내림차순으로 정렬하려면 sort()로 오름차순 정렬을 사용하고 reverse()로 뒤집어야 함
+    // 사용법 : 배열명.sort()
+
+    // reverse : 배열의 요소를 반대로 뒤집어주는 함수. 정렬 함수가 아님.
+    // 사용법 : 배열명.reverse()
+
+    numArr = [10, 60, 40, 90, 70, 20, 30, 50, 80]
+    console.log("원본 배열 numArr의 데이터 : ");
+    console.log(numArr);
+
+    // numArr.sort();
+    // console.log("sort() 사용 후 numArr의 데이터 : ");
+    // console.log(numArr);
+
+    numArr.reverse();
+    console.log("reverse() 사용 후 numArr의 데이터 : ");
+    console.log(numArr);
+
+    numArr = [10, 60, 40, 90, 70, 20, 30, 50, 80]
+    numArr.sort()
+    numArr.reverse()
+    console.log("sort() 사용 후 reverse() 사용으로 내림차순으로 정렬한 numArr의 데이터 : ");
+    console.log(numArr);
+
+    let strArr = ["b", "c", "a", "f", "e", "d"];
+    console.log(strArr);
+    strArr.sort();
+    console.log(strArr);
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

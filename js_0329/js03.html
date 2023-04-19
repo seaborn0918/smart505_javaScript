@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 4일 3번 파일</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/bootstrap.bundle.js"></script>
+  <script>
+    // break: switch ~ case문, 반복문에서 사용하는 제어문. 제어문 내에서 break;를 만나면 해당 제어문을 즉시 종료
+    // continue: 반복문에서 사용하는 제어문. 반복문에서 continue를 만나면 현재 루프를 중지하고 다음 루프로 넘어감
+
+    console.log('------ break ------')
+    for (let i = 1; i < 10; i++) {
+      if (i == 5) {
+        break;
+      }
+      console.log(5 + ' * ' + i + ' = ' + 5 * i);
+    }
+
+    console.log('------ continue ------')
+    for (let i = 1; i < 10; i++) {
+      if (i == 5) {
+        continue;
+      }
+      console.log(5 + ' * ' + i + ' = ' + 5 * i);
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

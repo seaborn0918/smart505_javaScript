@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>doit 자바스크립트 예제</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/bootstrap.bundle.js"></script>
+
+  <script>
+    // alert("안녕하세요?");
+    //
+    // var reply = confirm("정말 배경 이미지를 바꾸겠습니까?");
+    //
+    // document.write("<h1>어서오세요</h1>");
+    //
+    // var name = prompt("이름을 입력하세요.", "아무개");
+    // document.write("<b><span>" + name + "</span></b>님, 환영합니다.")
+
+    var today = new Date();
+    var h = today.getHours()
+    var m = today.getMinutes();
+    console.log("현재 시각 - " + h + ":" + m);
+
+    var currentYear = 2023;
+    var birthYear;
+    var age;
+
+    birthYear = prompt("태어난 연도를 입력하세요. (YYYY)", "");
+    age = currentYear - birthYear + 1;
+    document.write(currentYear + "년 현재<br>");
+    document.write(birthYear + "년에 태어난 사람의 나이는 " + age + "세입니다.");
+
+
+
+  </script>
+
+</head>
+<body>
+<!--  <h1 id="heading">자바스크립트</h1>-->
+<!--  <p id="text">위 텍스트를 클릭해 보세요</p>-->
+
+<!--  <script>-->
+<!--    var heading = document.querySelector('#heading');-->
+<!--    heading.onclick = function () {-->
+<!--        heading.style.color = "red";-->
+<!--    }-->
+<!--  </script>-->
+</body>
+</html>

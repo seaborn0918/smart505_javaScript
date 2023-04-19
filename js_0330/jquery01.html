@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jquery 1일차</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="./js/bootstrap.bundle.js"></script>
+
+  <script>
+    // jquery: 자바스크립트를 조금 더 쉽게 사용하기 위한 라이브러리
+    // jquery를 사용한다는 의미로 $기호를 명령어 앞에 사용
+    // 자바스크립트는 html 태그를 선택하기 위해서 css의 선택자를 사용함
+    // jquery는 html 태그를 선택하기 위해서 $('css선택자') 형태로 사용함
+
+    // $(document): 현재 웹 문서를 뜻함. document가 html 문서를 뜻함
+    // ready(): addEventListener('DOMContentLoaded')와 같은 기능을 의미하는 이벤트
+
+    // 사용법:
+    // $('css 선택자').jquery명령어();
+
+    // 태그 선택:
+    // 키워드 변수명 = $('css 선택자');
+
+
+    $(document).ready(function () {
+      //  on('이벤트종류', 콜백함수): 자바스크립트 이벤트 리스너에 지정한 이벤트를 등록
+      //  off('이벤트종류'): 자바스크립트 이벤트 리스너에 등록된 이벤트를 제거
+      //  one('이벤트종류', 콜백함수): 자바스크립트 이벤트 리스너에 지정한 이벤트를 1회용으로 등록
+    });
+
+    // $(document).on('ready', function () {
+    // });
+
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('#btn01').on('click', function () {
+        $('#img01').on('click', function () {
+          alert('클릭 이벤트');
+        });
+        alert('on() 명령어를 통해서 이벤트 등록');
+      });
+
+      $('#btn02').on('click', function () {
+        $('#img01').off('click');
+        alert('off() 명령어를 통해서 이벤트 삭제');
+      });
+
+      $('#btn03').on('click', function () {
+        $('#img01').one('click', function () {
+          alert('일회용 클릭 이벤트');
+        })
+      });
+
+      ////////////////////////////////////////
+
+      $('#div-red').on('click', function () {
+        alert('클릭 이벤트 발생');
+      });
+
+      $('#div-red').on('contextmenu', function () {
+        alert('마우스 오른쪽 클릭 이벤트 발생');
+      });
+
+      $('#div-green').on('dblclick', function () {
+        alert('더블 클릭 이벤트 발생');
+      });
+
+      $('#div-green').on('hover', function () {
+        alert('hover 이벤트 발생');
+      });
+
+      $('#div-blue').on('mousedown', function () {
+        alert('mousedown 이벤트 발생');
+      });
+
+      $('#div-blue').on('mouseenter', function () {
+        alert('mouseenter 이벤트 발생');
+      });
+
+      $('#div-blue').on('mouseout', function () {
+        alert('mouseout 이벤트 발생');
+      });
+
+      //////////////////////////////////////
+
+      $('#input01').on('keydown', function () {
+        console.log('키보드 keydown 이벤트 발생');
+      });
+
+      $('#input02').on('keypress', function () {
+        console.log('키보드 keypress 이벤트 발생');
+      });
+
+      $('#input03').on('keyup', function () {
+        console.log('키보드 keyup 이벤트 발생');
+      });
+
+    });
+  </script>
+
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container mt-5">
+    <h3>jquery를 이용한 이벤트</h3>
+    <div>
+      <button type="button" class="btn btn-primary" id="btn01">클릭 이벤트 등록</button>
+      <button type="button" class="btn btn-primary" id="btn02">클릭 이벤트 삭제</button>
+      <button type="button" class="btn btn-primary" id="btn03">1회용 클릭 이벤트</button>
+    </div>
+    <br>
+    <img src="./images/003.jpg" alt="" id="img01" class="img-fluid">
+    <br>
+    <br>
+    <br>
+
+    <h3>다른 이벤트 사용하기</h3>
+    <div class="d-flex justify-content-center">
+      <div class="bg-danger m-3 border box" id="div-red"></div>
+      <div class="bg-success m-3 border box" id="div-green"></div>
+      <div class="bg-primary m-3 border box" id="div-blue"></div>
+    </div>
+
+    <hr>
+
+    <h3>키보드 이벤트 사용하기</h3>
+    <div>
+      <input type="text" class="form-control" id="input01">
+    </div>
+    <div>
+      <input type="text" class="form-control" id="input02">
+    </div>
+    <div>
+      <input type="text" class="form-control" id="input03">
+    </div>
+  </div>
+
+
+
+</body>
+</html>

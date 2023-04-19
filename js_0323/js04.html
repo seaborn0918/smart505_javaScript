@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 1일차 4번 파일</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // 연산자: 프로그래밍 언어를 통해서 데이터를 처리하는 연산을 하기 위한 기호
+    // 산술연산자: 수학의 사칙연산과 동일한 역할을 하는 연산자. 나머지를 구하기 위한 나머지 연산자가 추가되어 있음
+    // +: 피연산자 A와 B를 합하는 연산자
+    // -: 피연산자 A에서 B를 빼는 연산자
+    // *: 피연산자 A와 B를 곱하는 연산자
+    // /: 피연산자 A에서 B를 나눈 몫을 구하는 연산자;
+    // %: 피연산자 A에서 B를 나눈 후 남은 나머지를 구하는 연산자
+
+    var num1 = 10;
+    var num2 = 3;
+    var result = 0; // 연산의 결과값을 저장할 변수
+
+    result = num1 + num2;
+    console.log("두 수의 덧셈은 : " + result);
+
+    result = num1 - num2;
+    console.log("두 수의 뺄셈은 : " + result);
+
+    result = num1 * num2;
+    console.log("두 수의 곱셈은 : " + result);
+
+    result = num1 / num2;
+    console.log("두 수의 나눗셈은 : " + result);
+
+    result = num1 % num2;
+    console.log("두 수의 나눗셈 후 나머지는 : " + result);
+
+    console.log("\n---------- 증감 연산자 ----------\n")
+    // 증감연산자: 데이터를 1 증가시키거나 1 감소시키는 연산자. 단항 연산자(피연산자가 하나). 우선 순위가 가장 빠름(괄호제외)
+    // 증감연산자가 피연산자의 앞에 있을 경우 데이터를 먼저 증감시키고 다른 연산이 실행됨
+    // 증감연산자가 피연산자의 뒤에 있을 경우 다른 연산을 진행하고 나중에 데이터를 증감시킴
+    // 증감연산자를 단독으로 사용 시 피연산자 앞에 있으나 뒤에 있으나 차이가 없음
+    // ++: 데이터를 1 증가
+    // --: 데이터를 1 감소
+
+    num1 = 10;
+    console.log("변수 num1의 현재 값 : " + num1);
+    num1++;
+    console.log("후치 연산으로 데이터 증가 후 num1의 값 : " + num1);
+    ++num1;
+    console.log("전치 연산으로 데이터 증가 후 num1의 값 : " + num1);
+    num1--;
+    console.log("후치 연산으로 데이터 감소 후 num1의 값 : " + num1);
+    --num1;
+    console.log("전치 연산으로 데이터 감소 후 num1의 값 : " + num1);
+    // 전치, 후치 연산 차이 없음
+
+    num2 = 10;
+    console.log("변수 num2의 현재 값 : " + num2);
+    console.log("전치 연산으로 데이터 증가 후 num2의 값 : " + ++num2);
+    console.log("후치 연산으로 데이터 증가 후 num2의 값 : " + num2++);
+    console.log("데이터 증가 후 현재 num2의 값 : " + num2);
+    console.log("후치 연산으로 데이터 감소 후 num2의 값 : " + num2--);
+    console.log("전치 연산으로 데이터 감소 후 num2의 값 : " + --num2);
+    console.log("데이터 감소 후 현재 num2의 값 : " + num2);
+
+    console.log("\n---------- 대입 연산자 ----------\n")
+    // 대입연산자: 연산자 오른쪽에 있는 피연산자의 연산 결과를 연산자의 왼쪽에 있는 변수에 저장하는 연산자. 우선순위가 가장 낮음. 연산의 방향이 다른 연산자와 달리 오른쪽에서 왼쪽으로 진행함
+    // =: 연산자의 오른쪽에 있는 데이터를 연산자 왼쪽의 변수에 저장하는 기능을 하는 연산자
+    // +=: 대입연산자와 산술연산자를 합하여 만든 연산자. total = total + 1 형태를 total += 1; 형태로 변경한 것. 여러 개의 문자열을 하나의 문자열로 합할 경우 많이 사용함
+    // -=, *=, /=, %=: 대입연산자와 산술연산자를 합하여 만든 연산자. 잘 활용되지 않음
+
+    var result = 100;
+    console.log("변수 result의 값 : " + result);
+
+    result = "문자열도" + "하나로 합하기";
+    console.log("변수 result의 값 : " + result);
+
+    num1 = 10;
+    console.log("원본 변수 num1의 값 : " + num1);
+
+    num1 = num1 + 1;
+    console.log("데이터 추가 후 : " + num1);
+    num1 = num1 + 1;
+    console.log("데이터 추가 후 : " + num1);
+
+    num2 = 10;
+    console.log("원본 변수 num2의 값 : " + num2);
+    num2 += 1;
+    console.log("데이터 추가 후 : " + num2);
+    num2 += 1;
+    console.log("데이터 추가 후 : " + num2);
+
+    var str1 = "문자열" + "연결 연산자" + "사용 시" + "하나로 연결함";
+    console.log(str1);
+
+    var str1 = "문자열";
+    str1 = str1 + "연결 연산자";
+    str1 = str1 + "사용 시";
+    str1 = str1 + "하나로 연결함";
+    console.log(str1);
+
+    var str1 = "문자열";
+    str1 += "연결 연산자";
+    str1 += "사용 시";
+    str1 += "하나로 연결함";
+    console.log(str1);
+
+    console.log("\n---------- 문자열 연결 연산자 ----------\n")
+    // 문자열 연결 연산자: 두 개 이상의 문자열을 하나의 문자열로 연결시키는 연산자
+    // 문자열과 다른 데이터 타입을 연산하면 모두 문자열로 변환됨
+    // + : 문자열 피연산자 2개를 하나의 문자열로 연결함
+
+    var str1 = "java";
+    var str2 = "script";
+    var str3 = str1 + str2;
+    console.log(str1);
+    console.log(str2);
+    console.log(str3);
+
+    var java1 = 10;
+    var java2 = 7;
+    var result = java1 + java2;
+    console.log(result);
+
+    var java = "JDK" + result;
+    console.log(java);
+
+    var java = "JDK" + java1 + java2;
+    console.log(java);
+
+    var java = "JDK" + (java1 + java2);
+    console.log(java);
+
+    console.log("\n---------- 비교 연산자 ----------\n")
+    // 비교연산자: 수학에서 사용하는 비교 연산자와 동일한 기능을 하는 연산자. 결과를 논리형 데이터로 출력
+    // 두 개의 피연산자 중 왼쪽을 기준으로 함 (왼쪽 A, 오른쪽 B)
+    // <: A는 B보다 작다
+    // <=: A는 B보다 작거나 같다
+    // >: A는 B보다 크다
+    // >=: A는 B보다 크거나 같다
+    // ==: A는 B와 같다
+    // !=: A는 B와 같지 않다
+
+    // 자바스크립트는 자바와 같은 프로그래밍 언어와 달리 간소화된 언어이기 때문에 데이터 타입을 체크하지 않음
+    // 숫자형 데이터와 문자열형 데이터이지만 숫자로 입력되어 있는 데이터를 구분하지 않음
+    // ===: A는 B와 같다. 데이터 타입까지 정확하게 확인하여 비교. 자바스크립트에만 존재
+    // !==: A는 B와 같지 않다. 데이터 타입까지 정확하게 확인하여 비교. 자바스크립트에만 존재
+
+    var a = 10;
+    var b = 20;
+    console.log(a < b);
+    console.log(a <= 10);
+    console.log(a > b);
+    console.log(a >= 20);
+    console.log(a == b);
+    console.log(a != b);
+
+    a = 100;
+    b = "100";
+    console.log(a);
+    console.log(b);
+    console.log("변수 a의 데이터 타입 : " + typeof a);
+    console.log("변수 b의 데이터 타입 : " + typeof b);
+
+    console.log(a == b); // 자바스크립트에 문자열 타입인 숫자 데이터와 숫자 타입인 숫자 데이터를 비교시 같다고 출력
+    console.log(a != b);
+    // ===, !== 사용 시 데이터 타입까지 구분하여 비교하기 때문에 100과 "100"를 다른 데이터로 인식함
+    console.log(a === b);
+    console.log(a !== b);
+
+
+    console.log("\n---------- 논리 연산자 ----------\n")
+    // 논리연산자: 두 피연산자의 결과가 논리적으로 참인지 거짓인지를 판별하는 연산자. 논리 게이트를 가지고 만들어진 연산자.
+    // 논리곱연산 (and연산, &&): 두 피연산자의 결과가 모두 참일 경우에만 최종적으로 참이 되는 연산. 나머지는 모두 거짓
+    // 논리합연산 (or연산, ||): 두 피연산자의 결과 중 하나라도 참일 경우 최종적으로 참이 되는 연산. 두 피연산자의 결과가 모두 거짓일 때 최종적으로 거짓이 됨
+    // 논리부정 (not연산, !): 단항 연산자. 피연산자의 결과를 반대로 변환하는 연산. 참이면 거짓으로 거짓이면 참으로 변환
+
+    var a = 10;
+    var b = 20;
+    var c = 15;
+    var d = 25;
+
+    if ((a < b) && (c < d)) {
+        console.log("최종 결과 true");
+    }
+    else {
+        console.log("최종 결과 false");
+    }
+
+    if ((a > b) && (c != d)) {
+        console.log("최종 결과 true");
+    }
+    else {
+        console.log("최종 결과 false");
+    }
+
+    if ((a < b) || (c < d)) {
+        console.log("최종 결과 true");
+    }
+    else {
+        console.log("최종 결과 false");
+    }
+
+    if ((a > b) || (c != d)) {
+        console.log("최종 결과 true");
+    }
+    else {
+        console.log("최종 결과 false");
+    }
+
+
+
+
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jquery 3일차 2번</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="./js/bootstrap.bundle.js"></script>
+
+  <script>
+    $(document).ready(function () {
+    // 필터링
+    // first(): 지정한 태그 중 첫번째 태그를 선택
+    // last(): 지정한 태그 중 마지막 태그 선택
+    // eq(index): 지정한 태그 중 매개변수로 지정한 순번의 태그를 선택, 순번은 0부터 시작
+    // filter(css선택자): 지정한 태그 중 매개변수로 지정한 css 선택자의 태그를 선택
+    // not(): 지정한 태그 중 기준과 일치하지 않는 모든 태그를 선택
+      $('#div01 > .sub01 > div').first().css({
+        'background-color': 'yellow'
+      });
+      $('#div02 > .sub01 > div').last().css({
+        'background-color': 'yellow'
+      });
+      $('#div03 p').eq(2).css({
+        'background-color': 'yellow'
+      });
+      $('#div04 p').filter('.intro').css({
+        'background-color': 'yellow'
+      });
+      $('#div05 p').not('.intro').css({
+        'background-color': 'yellow'
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <div class="container mt-5">
+    <div id="div01">
+      <h3>first</h3>
+      <div class="sub01">
+        <h2>first() 효과를 확인하기 위한 태그</h2>
+        <p>first() 효과를 확인하기 위한 태그</p>
+        <br>
+        <div class="border mb-3 p-3">
+          <p>div 안의 p 태그1</p>
+          <p>div 안의 p 태그2</p>
+        </div>
+        <div class="border mb-3 p-3">
+          <p>div 안의 p 태그1</p>
+          <p>div 안의 p 태그2</p>
+        </div>
+        <div class="border mb-3 p-3">
+          <p>div 안의 p 태그1</p>
+          <p>div 안의 p 태그2</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="div02">
+      <h3>last()</h3>
+      <div class="sub01">
+        <h2>last() 효과를 확인하기 위한 태그</h2>
+        <p>last() 효과를 확인하기 위한 태그</p>
+        <br>
+        <div class="border mb-3 p-3">
+          <p>div 안의 p 태그1</p>
+          <p>div 안의 p 태그2</p>
+        </div>
+        <div class="border mb-3 p-3">
+          <p>div 안의 p 태그1</p>
+          <p>div 안의 p 태그2</p>
+        </div>
+        <div class="border mb-3 p-3">
+          <p>div 안의 p 태그1</p>
+          <p>div 안의 p 태그2</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="div03">
+      <h3>eq()</h3>
+      <div>
+        <p>첫번째 p 태그 (index 0)</p>
+        <p>두번째 p 태그 (index 1)</p>
+        <p>세변째 p 태그 (index 2)</p>
+        <p>네번째 p 태그 (index 3)</p>
+        <p>다섯번째 p 태그 (index 4)</p>
+      </div>
+    </div>
+    <br>
+    <div id="div04">
+      <h3>filter()</h3>
+      <div>
+        <p>첫번째 p 태그 (index 0)</p>
+        <p class="intro">두번째 p 태그 (index 1)</p>
+        <p class="intro">세변째 p 태그 (index 2)</p>
+        <p>네번째 p 태그 (index 3)</p>
+        <p>다섯번째 p 태그 (index 4)</p>
+      </div>
+    </div>
+    <br>
+    <div id="div05">
+      <h3>not()</h3>
+      <div>
+        <p>첫번째 p 태그 (index 0)</p>
+        <p class="intro">두번째 p 태그 (index 1)</p>
+        <p class="intro">세변째 p 태그 (index 2)</p>
+        <p>네번째 p 태그 (index 3)</p>
+        <p>다섯번째 p 태그 (index 4)</p>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>

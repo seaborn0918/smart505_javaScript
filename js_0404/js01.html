@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="./js/bootstrap.bundle.js"></script>
+
+  <style>
+    #div01 > div, #div02 > div, #div03 > div, #div04 > div {
+      display: block;
+      border: 2px solid lightgray;
+      color: lightgray;
+      padding: 5px;
+      margin: 15px;
+    }
+  </style>
+  <script>
+    // 형제 태그 찾기
+    // siblings(css선택자): 지정한 태그의 모든 형제 태그를 선택
+    // next(): 지정한 태그의 바로 다음에 있는 형제 태그를 선택
+    // nextAll(): 지정한 태그의 바로 다음에 있는 모든 형제 태그를 선택
+    // nextUntil(css선택자): 지정한 태그의 바로 다음에 있는 태그와 매개변수로 지정한 태그 사이에 있는 모두 선택
+    // prev(): 지정한 태그의 바로 앞에 있는 형제 태그를 선택
+    // prevAll(): 지정한 태그의 바로 앞에 있는 모든 형제 태그를 선택
+    // prevUntil(css선택자): 지정한 태그의 바로 앞에 있는 태그와 매개변수로 지정한 태그 사이에 있는 모두 선택
+
+    $(document).ready(function () {
+      $('#div01 > .sub01 > h2').siblings().css({
+        color: 'red',
+        border: '2px solid red'
+      });
+
+      $('#div01 > .sub02 > h2').siblings('p').css({
+        border: '2px solid red',
+        color: 'red'
+      });
+
+      $('#div02 > div > h2').next().css({
+        border: '2px solid red',
+        color: 'red'
+      });
+
+      $('#div03 > .sub01 > h2').nextAll().css({
+        border: '2px solid red',
+        color: 'red'
+      });
+
+      $('#div04 > .sub01 > h2').nextUntil('h6').css({
+        border: '2px solid red',
+        color: 'red'
+      });
+    });
+
+  </script>
+
+</head>
+<body>
+  <div class="container mt-5">
+    <div id="div01">
+      <h3>siblings()</h3>
+
+      <div class="sub01">div (부모 태그)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+      </div>
+
+      <div class="sub02">div (부모 태그)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+      </div>
+    </div>
+
+    <div id="div02">
+      <div class="sub01">div (부모 태그)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+      </div>
+    </div>
+
+    <div id="div03">
+      <div class="sub01">div (부모 태그)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+      </div>
+    </div>
+
+    <div id="div04">
+      <div class="sub01">div (부모 태그)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2 선택</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6 매개변수로 선택</h6>
+        <p>p</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
